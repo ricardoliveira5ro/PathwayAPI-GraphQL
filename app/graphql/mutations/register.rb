@@ -1,7 +1,5 @@
 module Mutations
   class Register < Mutations::BaseMutation
-    #graphql_name "register"
-
     argument :email, String, required: true
     argument :password, String, required: true
 

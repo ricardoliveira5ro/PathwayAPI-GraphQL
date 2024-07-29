@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  has_secure_password
-  has_many :sessions
+  EMAIL_REGEXP = /\A[^@\s]+@[^@\s]+\z/
 
-  validates :email, presence: true, uniqueness: true
+  has_secure_password
+  validates :email, presence: true, uniqueness: {case_sensitive: false}, format: EMAIL_REGEXP
+
+  normalizes :email, with: -> { _1.strip.downcase }
 end

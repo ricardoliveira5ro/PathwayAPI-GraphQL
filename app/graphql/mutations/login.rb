@@ -7,7 +7,7 @@ module Mutations
 
     def resolve(email:, password:)
       user = User.find_by(email: email)
-      erros = {}
+      errors = {}
   
       if user&.authenticate(password)
         context[:current_user] = user

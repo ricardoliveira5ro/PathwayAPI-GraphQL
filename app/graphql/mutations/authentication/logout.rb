@@ -1,4 +1,4 @@
-module Mutations
+module Mutations::Authentication
   class Logout < Mutations::BaseMutation
     field :success, Boolean, null: false
 

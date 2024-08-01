@@ -31,6 +31,7 @@ module Types
       argument :id, Integer, required: true
     end
     def category(id:)
+      check_authentication!
       Category.find(id)
     end
   end

@@ -6,6 +6,8 @@ module Mutations::Category
     field :errors, Types::ValidationErrorsType, null: true
 
     def resolve(args)
+      check_authentication!
+
       category = Category.new(args)
 
       if category.save

@@ -26,5 +26,12 @@ module Types
     def is_running
       "The API is running"
     end
+
+    field :category, Types::CategoryType, null: true, description: "Returns on Category instance" do
+      argument :id, Integer, required: true
+    end
+    def category(id:)
+      Category.find(id)
+    end
   end
 end

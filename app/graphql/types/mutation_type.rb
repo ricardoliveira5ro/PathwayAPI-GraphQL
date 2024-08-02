@@ -6,8 +6,5 @@ module Types
     field :register, mutation: Mutations::Authentication::Register
     field :login, mutation: Mutations::Authentication::Login
     field :logout, mutation: Mutations::Authentication::Logout
-
-    # Category mutations
-    field :create_category, mutation: Mutations::Category::Create
   end
 end

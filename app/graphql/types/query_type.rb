@@ -34,5 +34,11 @@ module Types
       check_authentication!
       Category.find(id)
     end
+
+    field :categories, [Types::CategoryType], null: true, description: "Returns all the categories"
+    def categories
+      check_authentication!
+      Category.all
+    end
   end
 end

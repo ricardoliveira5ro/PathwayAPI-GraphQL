@@ -27,7 +27,7 @@ module Types
       "The API is running"
     end
 
-    field :category, Types::CategoryType, null: true, description: "Returns on Category instance" do
+    field :category, Types::CategoryType, null: true, description: "Returns a Category instance" do
       argument :id, Integer, required: true
     end
     def category(id:)
@@ -35,7 +35,7 @@ module Types
       Category.find(id)
     end
 
-    field :categories, [Types::CategoryType], null: true, description: "Returns all the categories"
+    field :categories, [Types::CategoryType], null: true, description: "Returns all categories"
     def categories
       check_authentication!
       Category.all

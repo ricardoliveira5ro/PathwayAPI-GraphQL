@@ -53,6 +53,8 @@ class GraphqlController < ApplicationController
     case error
     when JWT::DecodeError
       render json: { errors: [{ message: "Invalid token: #{error.message}" }] }, status: 401
+    when ActiveRecord::RecordNotFound
+      render json: { errors: [{ message: "Invalid token" }] }, status: 401
     else
       if Rails.env.development?
         handle_error_in_development(error)

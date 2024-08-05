@@ -27,6 +27,7 @@ module Types
       "The API is running"
     end
 
+    ############# Category ################
     field :category, Types::CategoryType, null: true, description: "Returns a Category instance" do
       argument :id, Integer, required: true
     end
@@ -39,6 +40,21 @@ module Types
     def categories
       check_authentication!
       Category.all
+    end
+
+    ############# Roadmap ################
+    field :roadmap, Types::RoadmapType, null: true, description: "Returns a Roadmap instance" do
+      argument :id, Integer, required: true
+    end
+    def roadmap(id:)
+      check_authentication!
+      Roadmap.find(id)
+    end
+
+    field :roadmaps, [Types::RoadmapType], null: true, description: "Returns all roadmaps"
+    def roadmaps
+      check_authentication!
+      Roadmap.all
     end
   end
 end

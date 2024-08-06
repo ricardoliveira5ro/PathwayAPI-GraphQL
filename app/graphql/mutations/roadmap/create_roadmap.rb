@@ -9,7 +9,9 @@ module Mutations::Roadmap
     field :errors, Types::ValidationErrorsType, null: true
 
     def resolve(title:, description:, category_ids:, steps: [])
-      roadmap = Roadmap.new(title: title, description: description)
+      check_authentication!
+
+      roadmap = Roadmap.new(title: title, description: description, user: context[:current_user])
 
       categories = Category.find(category_ids)
       roadmap.categories << categories

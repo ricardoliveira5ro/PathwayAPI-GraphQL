@@ -9,5 +9,6 @@ module Types
 
     # Roadmap mutations
     field :create_roadmap, mutation: Mutations::Roadmap::CreateRoadmap
+    field :update_roadmap, mutation: Mutations::Roadmap::UpdateRoadmap
   end
 end

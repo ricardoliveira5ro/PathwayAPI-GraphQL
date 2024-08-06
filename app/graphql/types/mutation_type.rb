@@ -6,5 +6,8 @@ module Types
     field :register, mutation: Mutations::Authentication::Register
     field :login, mutation: Mutations::Authentication::Login
     field :logout, mutation: Mutations::Authentication::Logout
+
+    # Roadmap mutations
+    field :create_roadmap, mutation: Mutations::Roadmap::CreateRoadmap
   end
 end

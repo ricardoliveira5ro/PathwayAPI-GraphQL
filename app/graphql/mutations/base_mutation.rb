@@ -14,5 +14,11 @@ module Mutations
 
       raise GraphQL::ExecutionError, "You need to authenticate to perform this action"
     end
+
+    def check_roadmap_ownership!(roadmap)
+      return if roadmap.user_id == context[:current_user].id
+
+      raise GraphQL::ExecutionError, "Cannot perform this operation, roadmap created by another user"
+    end
   end
 end

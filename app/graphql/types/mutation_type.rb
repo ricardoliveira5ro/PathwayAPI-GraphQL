@@ -11,5 +11,8 @@ module Types
     field :create_roadmap, mutation: Mutations::Roadmap::CreateRoadmap
     field :update_roadmap, mutation: Mutations::Roadmap::UpdateRoadmap
     field :delete_roadmap, mutation: Mutations::Roadmap::DeleteRoadmap
+
+    # Step mutations
+    field :delete_steps, mutation: Mutations::Step::DeleteSteps
   end
 end

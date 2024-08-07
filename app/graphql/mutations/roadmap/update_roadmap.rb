@@ -9,13 +9,18 @@ module Mutations::Roadmap
     field :roadmap, Types::RoadmapType, null: true
     field :errors, Types::ValidationErrorsType, null: true
 
-    def resolve(id:, **args)
+    def resolve(id:, steps: [], **args)
       check_authentication!
 
       roadmap = Roadmap.find(id)     
       check_roadmap_ownership!(roadmap)
 
-      if roadmap.update(args)
+      if roadmap.update(args.except(:steps))
+        # Append to existent steps
+        steps.each do |step_attrs|
+          roadmap.steps.create!(step_attrs.to_h)
+        end
+
         { roadmap: roadmap, success: true }
       else
         { errors: roadmap.errors, success: false }

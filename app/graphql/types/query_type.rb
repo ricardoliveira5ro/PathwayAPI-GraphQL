@@ -56,5 +56,23 @@ module Types
       check_authentication!
       Roadmap.all
     end
+
+    ############# Step ################
+    field :step, Types::StepType, null: true, description: "Returns a Step instance" do
+      argument :id, ID, required: true
+    end
+    def step(id:)
+      check_authentication!
+      Step.find(id)
+    end
+
+    field :roadmap_steps, [Types::StepType], null: true, description: "Returns all steps from a specific roadmap" do
+      argument :roadmap_id, ID, required: true
+    end
+    def roadmap_steps(roadmap_id:)
+      check_authentication!
+      roadmap = Roadmap.find(roadmap_id)
+      roadmap.steps
+    end
   end
 end

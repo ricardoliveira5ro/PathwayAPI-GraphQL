@@ -15,5 +15,8 @@ module Types
     # Step mutations
     field :update_step, mutation: Mutations::Step::UpdateStep
     field :delete_steps, mutation: Mutations::Step::DeleteSteps
+
+    # Tracking mutations
+    field :track_step, mutation: Mutations::Step::TrackStep
   end
 end

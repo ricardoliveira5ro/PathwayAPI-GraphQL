@@ -39,3 +39,31 @@ mutation Login {
     }
 }
 ```
+
+---
+
+#### 🔍 Query
+Use queries to obtain one object or a list of objects, like Roadmaps, Categories and Steps
+
+```
+query Roadmaps {
+    roadmaps {
+        id
+        description
+        title
+        completed
+        categories {
+            id
+            name
+        }
+        steps {
+            id
+            completed
+            description
+            order
+            roadmapId
+            title
+        }
+    }
+}
+```

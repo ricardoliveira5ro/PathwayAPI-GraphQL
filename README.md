@@ -1,6 +1,6 @@
 # PathwayAPI (GraphQL)
 
-`---will-be-here-soon` hosts a public instance of the API. 
+`pathwayapi-graphql.onrender.com` hosts a public instance of the API. 
 
 > [!Important]
 > Please notice this API serves the same purpose of the original one, but with a different architecture. You can find everything you need to know in this [repository](https://github.com/ricardoliveira5ro/PathwayAPI/blob/master/README.md)

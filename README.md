@@ -68,6 +68,8 @@ query Roadmaps {
 }
 ```
 
+---
+
 #### 🧬 Mutations
 Use mutations to create or modify an object, like Roadmaps, Steps and Tracking Steps
 
@@ -105,3 +107,32 @@ mutation CreateRoadmap {
     }
 }
 ```
+
+<br/>
+
+## 💻 Technical Details
+
+This section is for the developers who want to explore the technical characteristics of the API.
+
+#### 🛠️ Tech stack
+
+* Ruby (v3)
+* Ruby on rails (v7)
+* Postgresql
+* graphql (gem)
+* jwt (gem)
+
+#### 🚀 Run
+
+* Run `bundle install`
+* Create the user/role in your local postgres database
+* Edit your *database.yml* to include your local database information provided by your keys in *credentials.yml.enc*
+* Run `rails db:create` and `rails db:migrate` (every time there is a change in your schema)
+* Edit your *seeds.rb* file to include any preloaded data and run `run db:seed`
+* Start the server `rails s`
+
+#### 💭 Considerations
+
+* Postgre database (shared with the original PathwayAPI)
+* Webservice hosted in *render.com*
+* Use of *Postman* or any other graphql interpreter recommended to check all the queries and mutations available

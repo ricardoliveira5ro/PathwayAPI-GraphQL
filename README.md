@@ -67,3 +67,41 @@ query Roadmaps {
     }
 }
 ```
+
+#### 🧬 Mutations
+Use mutations to create or modify an object, like Roadmaps, Steps and Tracking Steps
+
+```
+mutation CreateRoadmap {
+    createRoadmap(
+        title: "New Roadmap"
+        description: "New Roadmap Description"
+        categoryIds: [7, 8]
+        steps: [
+            { title: "First Step", description: "First Description Step", order: 1 },
+            { title: "Second Step", description: "Second Description Step", order: 2 }
+        ]
+    ) {
+        success
+        errors {
+            details
+            fullMessages
+        }
+        roadmap {
+            id
+            title
+            description
+            categories {
+                id
+                name
+            }
+            steps {
+                id
+                title
+                description
+                order
+            }
+        }
+    }
+}
+```

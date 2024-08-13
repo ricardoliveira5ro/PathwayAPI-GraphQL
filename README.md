@@ -133,6 +133,6 @@ This section is for the developers who want to explore the technical characteris
 
 #### 💭 Considerations
 
-* Postgre database (shared with the original PathwayAPI)
+* Postgre database hosted in *neon.tech*
 * Webservice hosted in *render.com*
 * Use of *Postman* or any other graphql interpreter recommended to check all the queries and mutations available
